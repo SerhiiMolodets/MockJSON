@@ -1,0 +1,6 @@
+framework module Pods_FakeJSON {
+  umbrella header "Pods-FakeJSON-umbrella.h"
+
+  export *
+  module * { export * }
+}
