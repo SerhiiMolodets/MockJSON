@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+//MARK: Make request parameters
 let parameters: [String : Any] = [
       "token": "JBCOygjS36c78V0gv9Zquw",
       "data": [
