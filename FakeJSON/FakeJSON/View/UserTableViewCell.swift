@@ -35,13 +35,15 @@ class UserTableViewCell: UITableViewCell {
         
         
         guard let url = URL(string: with.user.avatar) else { return }
-        
-        do {
-            let data = try Data(contentsOf: url)
-                self.avatarView.image = UIImage(data: data)
-        } catch {
-            print(error)
+        DispatchQueue.global(qos: .userInteractive).async {
+            do {
+                let data = try Data(contentsOf: url)
+                    self.avatarView.image = UIImage(data: data)
+            } catch {
+                print(error)
+            }
         }
+
     }
 }
 
