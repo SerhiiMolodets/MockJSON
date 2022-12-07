@@ -7,5 +7,6 @@ target 'FakeJSON' do
 
   # Pods for FakeJSON
 pod 'Alamofire'
+pod 'Kingfisher', '~> 7.0'
 
 end

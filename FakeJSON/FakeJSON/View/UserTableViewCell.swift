@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarView: UIImageView!
@@ -29,20 +30,12 @@ class UserTableViewCell: UITableViewCell {
     
     
     func configure(with: UserDatum) {
+        guard let url = URL(string: with.user.avatar) else { return }
+        avatarView.kf.setImage(with: url)
         self.nickNameLabel.text = with.user.nickname
         self.nameLabel.text = with.user.firstName + " " + with.user.lastName
         self.mailLabel.text = with.user.email
         
-        
-        guard let url = URL(string: with.user.avatar) else { return }
-        DispatchQueue.global(qos: .userInteractive).async {
-            do {
-                let data = try Data(contentsOf: url)
-                    self.avatarView.image = UIImage(data: data)
-            } catch {
-                print(error)
-            }
-        }
 
     }
 }
