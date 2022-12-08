@@ -25,13 +25,12 @@ struct UserDatum: Codable {
 struct User: Codable {
     let avatar: String
     let email, firstName, lastName, nickname: String
-    let password: String
 
     enum CodingKeys: String, CodingKey {
         case avatar, email
         case firstName = "first_name"
         case lastName = "last_name"
-        case nickname, password
+        case nickname
     }
 }
 
