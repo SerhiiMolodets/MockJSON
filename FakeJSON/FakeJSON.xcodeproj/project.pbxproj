@@ -18,6 +18,9 @@
 		0839AB3E28C23B130040EE70 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0839AB3D28C23B130040EE70 /* Data.swift */; };
 		0839AB4528C23DFB0040EE70 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0839AB4328C23DFB0040EE70 /* UserTableViewCell.swift */; };
 		0839AB4628C23DFB0040EE70 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0839AB4428C23DFB0040EE70 /* UserTableViewCell.xib */; };
+		08B4F3EB2941F7540049BE3B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B4F3EA2941F7540049BE3B /* DataManager.swift */; };
+		08B4F3ED2941F7630049BE3B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B4F3EC2941F7630049BE3B /* CoreDataManager.swift */; };
+		08B4F3F12941F8790049BE3B /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08B4F3EF2941F8790049BE3B /* DataBase.xcdatamodeld */; };
 		846FDD9328C2793A007EDEC2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FDD9228C2793A007EDEC2 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +37,9 @@
 		0839AB3D28C23B130040EE70 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		0839AB4328C23DFB0040EE70 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		0839AB4428C23DFB0040EE70 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		08B4F3EA2941F7540049BE3B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		08B4F3EC2941F7630049BE3B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		08B4F3F02941F8790049BE3B /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		43A3CFA4D291F2DBE4F55E73 /* Pods-FakeJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeJSON.release.xcconfig"; path = "Target Support Files/Pods-FakeJSON/Pods-FakeJSON.release.xcconfig"; sourceTree = "<group>"; };
 		846FDD9228C2793A007EDEC2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C410504B529327561E51CABF /* Pods_FakeJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FakeJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,17 +79,12 @@
 		0839AB2428C218390040EE70 /* FakeJSON */ = {
 			isa = PBXGroup;
 			children = (
-				846FDD9128C27922007EDEC2 /* NetworkManager */,
+				846FDD9128C27922007EDEC2 /* Core */,
 				0839AB4028C23D6E0040EE70 /* Model */,
 				0839AB4228C23D9B0040EE70 /* View */,
 				0839AB4128C23D810040EE70 /* Controller */,
 				0839AB3F28C23D660040EE70 /* Data */,
-				0839AB2528C218390040EE70 /* AppDelegate.swift */,
-				0839AB2728C218390040EE70 /* SceneDelegate.swift */,
-				0839AB2B28C218390040EE70 /* Main.storyboard */,
-				0839AB2E28C2183B0040EE70 /* Assets.xcassets */,
-				0839AB3028C2183B0040EE70 /* LaunchScreen.storyboard */,
-				0839AB3328C2183B0040EE70 /* Info.plist */,
+				08B4F3EE2941F7A00049BE3B /* Resources */,
 			);
 			path = FakeJSON;
 			sourceTree = "<group>";
@@ -121,6 +122,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		08B4F3EE2941F7A00049BE3B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				08B4F3EF2941F8790049BE3B /* DataBase.xcdatamodeld */,
+				0839AB2528C218390040EE70 /* AppDelegate.swift */,
+				0839AB2728C218390040EE70 /* SceneDelegate.swift */,
+				0839AB2B28C218390040EE70 /* Main.storyboard */,
+				0839AB3028C2183B0040EE70 /* LaunchScreen.storyboard */,
+				0839AB2E28C2183B0040EE70 /* Assets.xcassets */,
+				0839AB3328C2183B0040EE70 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		33BD03051B5FD1395E39B5B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,12 +144,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		846FDD9128C27922007EDEC2 /* NetworkManager */ = {
+		846FDD9128C27922007EDEC2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				846FDD9228C2793A007EDEC2 /* NetworkManager.swift */,
+				08B4F3EA2941F7540049BE3B /* DataManager.swift */,
+				08B4F3EC2941F7630049BE3B /* CoreDataManager.swift */,
 			);
-			path = NetworkManager;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		B784F414FB2F381DA6BC962F /* Pods */ = {
@@ -263,10 +280,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0839AB2A28C218390040EE70 /* ViewController.swift in Sources */,
+				08B4F3EB2941F7540049BE3B /* DataManager.swift in Sources */,
+				08B4F3F12941F8790049BE3B /* DataBase.xcdatamodeld in Sources */,
 				0839AB3E28C23B130040EE70 /* Data.swift in Sources */,
 				0839AB2628C218390040EE70 /* AppDelegate.swift in Sources */,
 				846FDD9328C2793A007EDEC2 /* NetworkManager.swift in Sources */,
 				0839AB2828C218390040EE70 /* SceneDelegate.swift in Sources */,
+				08B4F3ED2941F7630049BE3B /* CoreDataManager.swift in Sources */,
 				0839AB4528C23DFB0040EE70 /* UserTableViewCell.swift in Sources */,
 				0839AB3C28C220670040EE70 /* Model.swift in Sources */,
 			);
@@ -418,7 +438,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82JRS96G7R;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FakeJSON/Info.plist;
+				INFOPLIST_FILE = FakeJSON/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -448,7 +468,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82JRS96G7R;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FakeJSON/Info.plist;
+				INFOPLIST_FILE = FakeJSON/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -490,6 +510,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		08B4F3EF2941F8790049BE3B /* DataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				08B4F3F02941F8790049BE3B /* DataBase.xcdatamodel */,
+			);
+			currentVersion = 08B4F3F02941F8790049BE3B /* DataBase.xcdatamodel */;
+			path = DataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0839AB1A28C218390040EE70 /* Project object */;
 }
