@@ -29,7 +29,7 @@ class UserTableViewCell: UITableViewCell {
     }
     
     
-    func configure(with: UserDatum) {
+    func configure(with: UserData) {
         guard let url = URL(string: with.user.avatar) else { return }
         avatarView.kf.setImage(with: url)
         self.nickNameLabel.text = with.user.nickname

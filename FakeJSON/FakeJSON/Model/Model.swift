@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - UserDatum
-struct UserDatum: Codable {
+// MARK: - UserData
+struct UserData: Codable {
     let user: User
 }
 
@@ -25,4 +25,3 @@ struct User: Codable {
     }
 }
 
-typealias UserData = [UserDatum]

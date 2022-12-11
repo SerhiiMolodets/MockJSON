@@ -18,6 +18,8 @@
 		0839AB3E28C23B130040EE70 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0839AB3D28C23B130040EE70 /* Data.swift */; };
 		0839AB4528C23DFB0040EE70 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0839AB4328C23DFB0040EE70 /* UserTableViewCell.swift */; };
 		0839AB4628C23DFB0040EE70 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0839AB4428C23DFB0040EE70 /* UserTableViewCell.xib */; };
+		08A502AB294639A900BE153C /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A502AA294639A900BE153C /* UserEntity.swift */; };
+		08A502AF29463B7600BE153C /* UserDataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A502AE29463B7600BE153C /* UserDataEntity.swift */; };
 		08B4F3EB2941F7540049BE3B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B4F3EA2941F7540049BE3B /* DataManager.swift */; };
 		08B4F3ED2941F7630049BE3B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B4F3EC2941F7630049BE3B /* CoreDataManager.swift */; };
 		08B4F3F12941F8790049BE3B /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08B4F3EF2941F8790049BE3B /* DataBase.xcdatamodeld */; };
@@ -37,6 +39,8 @@
 		0839AB3D28C23B130040EE70 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		0839AB4328C23DFB0040EE70 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		0839AB4428C23DFB0040EE70 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		08A502AA294639A900BE153C /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		08A502AE29463B7600BE153C /* UserDataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataEntity.swift; sourceTree = "<group>"; };
 		08B4F3EA2941F7540049BE3B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		08B4F3EC2941F7630049BE3B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		08B4F3F02941F8790049BE3B /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				846FDD9128C27922007EDEC2 /* Core */,
+				08A502A92946397000BE153C /* DataBaseModels */,
 				0839AB4028C23D6E0040EE70 /* Model */,
 				0839AB4228C23D9B0040EE70 /* View */,
 				0839AB4128C23D810040EE70 /* Controller */,
@@ -120,6 +125,15 @@
 				0839AB4428C23DFB0040EE70 /* UserTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		08A502A92946397000BE153C /* DataBaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				08A502AA294639A900BE153C /* UserEntity.swift */,
+				08A502AE29463B7600BE153C /* UserDataEntity.swift */,
+			);
+			path = DataBaseModels;
 			sourceTree = "<group>";
 		};
 		08B4F3EE2941F7A00049BE3B /* Resources */ = {
@@ -279,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A502AB294639A900BE153C /* UserEntity.swift in Sources */,
 				0839AB2A28C218390040EE70 /* ViewController.swift in Sources */,
 				08B4F3EB2941F7540049BE3B /* DataManager.swift in Sources */,
 				08B4F3F12941F8790049BE3B /* DataBase.xcdatamodeld in Sources */,
@@ -287,6 +302,7 @@
 				846FDD9328C2793A007EDEC2 /* NetworkManager.swift in Sources */,
 				0839AB2828C218390040EE70 /* SceneDelegate.swift in Sources */,
 				08B4F3ED2941F7630049BE3B /* CoreDataManager.swift in Sources */,
+				08A502AF29463B7600BE153C /* UserDataEntity.swift in Sources */,
 				0839AB4528C23DFB0040EE70 /* UserTableViewCell.swift in Sources */,
 				0839AB3C28C220670040EE70 /* Model.swift in Sources */,
 			);

@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var userTableView: UITableView!
 
-    private var users: UserData = []
+    private var users: [UserData] = []
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent

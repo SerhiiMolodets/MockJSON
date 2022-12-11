@@ -15,9 +15,9 @@ class CoreDataManager {
     
     // MARK: - Core Data stack
 //    A little improovment for using container
-    static var container: NSPersistentContainer {
-        return CoreDataManager.shared.persistentContainer
-    }
+//    static var container: NSPersistentContainer {
+//        return CoreDataManager.shared.persistentContainer
+//    }
 
     lazy var persistentContainer: NSPersistentContainer = {
         /*
