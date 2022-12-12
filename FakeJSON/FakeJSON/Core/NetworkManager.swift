@@ -12,15 +12,16 @@ struct NetworkManager {
 
     static let shared = NetworkManager()
 //MARK: Make request
-    func getRequest(completion: @escaping(([UserData]) -> ())) {
+    func getUsers(_ complition: @escaping([UserData]) -> ()) {
         let request = AF.request("https://app.fakejson.com/q", method: .post, parameters: parameters, encoding:  JSONEncoding.default)
         request.responseDecodable(of: [UserData].self) { responce in
             do {
                 let users = try responce.result.get()
-                completion(users)
+                complition(users)
             } catch {
                 print(error)
             }
         }
     }
+    private init() {}
 }

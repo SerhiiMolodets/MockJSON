@@ -23,5 +23,13 @@ struct User: Codable {
         case lastName = "last_name"
         case nickname
     }
+//    MARK: - Convert UserEntity to User
+    init(entity: UserEntity) {
+        self.avatar = entity.avatar ?? ""
+        self.lastName = entity.lastName ?? ""
+        self.firstName = entity.firstName ?? ""
+        self.nickname = entity.nickname ?? ""
+        self.email = entity.email ?? ""
+    }
 }
 

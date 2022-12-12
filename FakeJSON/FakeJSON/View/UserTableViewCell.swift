@@ -29,12 +29,12 @@ class UserTableViewCell: UITableViewCell {
     }
     
     
-    func configure(with: UserData) {
-        guard let url = URL(string: with.user.avatar) else { return }
+    func configure(user: User) {
+        guard let url = URL(string: user.avatar) else { return }
         avatarView.kf.setImage(with: url)
-        self.nickNameLabel.text = with.user.nickname
-        self.nameLabel.text = with.user.firstName + " " + with.user.lastName
-        self.mailLabel.text = with.user.email
+        self.nickNameLabel.text = user.nickname
+        self.nameLabel.text = user.firstName + " " + user.lastName
+        self.mailLabel.text = user.email
         
 
     }

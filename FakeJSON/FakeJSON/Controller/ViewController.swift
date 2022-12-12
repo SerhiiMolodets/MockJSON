@@ -11,7 +11,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var userTableView: UITableView!
 
-    private var users: [UserData] = []
+    private var users: [User] = []
+    private var dataManager = DataManager()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent
@@ -32,7 +33,7 @@ class ViewController: UIViewController {
     }
 //   MARK: Get request
     private func loadUsers(completion: @escaping(() -> ())) {
-        NetworkManager.shared.getRequest { [weak self] user in
+        dataManager.getUsers{ [weak self] user in
             guard let self = self else { return }
             self.users = user
             completion()
@@ -50,7 +51,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
 //        MARK: Configure cell
-        cell.configure(with: users[indexPath.row])
+        cell.configure(user: users[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

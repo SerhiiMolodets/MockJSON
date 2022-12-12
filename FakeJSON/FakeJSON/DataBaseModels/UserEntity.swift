@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 class UserEntity: NSManagedObject {
-    class func findOrCreate(_ user : User, context: NSManagedObjectContext) throws -> UserEntity {
+    class func findOrCreate(_ user : User,_ context: NSManagedObjectContext) throws -> UserEntity {
 //        MARK: - Find and get object from DB
         let request: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
 //        sorting objects by nickName
@@ -37,5 +37,20 @@ class UserEntity: NSManagedObject {
         
         return userEntity
         
+    }
+    
+    
+    class func all(_ context: NSManagedObjectContext) throws -> [UserEntity] {
+        //        MARK: - Find and get object from DB
+                let request: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
+       
+              
+                do {
+                    return try context.fetch(request)
+                   
+                } catch {
+        //            throw error to level up
+                    throw error
+                }
     }
 }
