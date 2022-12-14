@@ -18,7 +18,7 @@ class UserEntity: NSManagedObject {
         do {
             let fetchResult = try context.fetch(request)
             if fetchResult.count > 0 {
-//                if assert is not true, then will crash app in only debug mode
+//                if assert is not true, then it will crash app (only in debug mode)
                 assert(fetchResult.count == 1, "Duplicate has been found in DB!")
                 return fetchResult[0]
             }

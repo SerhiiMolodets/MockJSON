@@ -14,6 +14,7 @@ class DataManager {
     func getUsers(_ complition: @escaping([User]) -> ()) {
         coreDataManager.getAllUsers { (dbUsers) in
             if dbUsers.count > 0 {
+                print("from DB")
                 complition(dbUsers)
             } else {
                 self.networkManager.getUsers { (userData) in
